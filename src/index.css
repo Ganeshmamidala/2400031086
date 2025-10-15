@@ -1,0 +1,30 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --bg: #f7f7f9;
+  --card: #ffffff;
+  --accent: #2b6cb0;
+}
+
+body { margin: 0; background: var(--bg); color: #111; }
+.container { max-width: 960px; margin: 32px auto; padding: 0 16px; }
+h1 { text-align: center; margin-bottom: 20px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+.card { background: var(--card); border-radius: 8px; padding: 14px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); cursor: pointer; transition: transform .12s ease, box-shadow .12s ease; }
+.card:focus { outline: 2px solid var(--accent); }
+.card:hover { transform: translateY(-4px); box-shadow: 0 6px 18px rgba(0,0,0,0.12); }
+.card h3 { margin: 0 0 8px 0; }
+.short { color: #444; margin: 0 0 8px 0; }
+.price { font-weight: 700; color: var(--accent); margin: 0; }
+
+/* Modal styles */
+.modal-overlay { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.5); z-index: 1000; }
+.modal { width: min(780px, calc(100% - 40px)); background: #fff; border-radius: 10px; padding: 18px 20px 26px 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); position: relative; max-height: 90vh; overflow: auto; }
+.modal-close { position: absolute; top: 10px; right: 12px; background: transparent; border: 0; font-size: 28px; line-height: 1; cursor: pointer; }
+.modal-image { width: 100%; height: auto; border-radius: 6px; margin-bottom: 12px; }
+.modal h2 { margin: 6px 0; }
+.modal .price { font-size: 18px; }
+.modal .long { color: #333; }
+
+@media (max-width: 420px) {
+  .modal { padding: 14px; }
+}
